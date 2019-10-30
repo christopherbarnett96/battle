@@ -10,6 +10,10 @@ gem "capybara"
 
 gem "shotgun"
 
-gem "rspec"
+group :test do
+  gem "rspec"
+  gem "rack-test"
+end
+
 
 # gem "rails"
