@@ -11,11 +11,11 @@ feature 'Enter names' do
     end
   end
 
-context 'attack' do
-  scenario 'confirmation of attack' do
-    sign_in_and_play
-    click_button "Dave Attack!"
-    expect(page).to have_content 'Dave attacked Mittens'
+  context 'attack' do
+    scenario 'confirmation of attack' do
+      sign_in_and_play
+      click_button "Dave Attack!"
+      expect(page).to have_content 'Dave attacked Mittens'
+    end
   end
-end
 end
