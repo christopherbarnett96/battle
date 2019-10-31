@@ -14,7 +14,7 @@ feature 'Enter names' do
   context 'attack' do
     scenario 'confirmation of attack' do
       sign_in_and_play
-      click_button "Dave Attack!"
+      click_button "Dave: use Attack!"
       expect(page).to have_content 'Dave attacked Mittens'
     end
   end
