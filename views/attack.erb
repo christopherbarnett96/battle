@@ -1,9 +1,5 @@
 <%=@game.player_1.name%> attacked <%=@game.player_2.name%>
 
-<%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
-
-<p>Current turn - <%= @game.current_turn.name %></p>
-
-<form action="/play">
+<form action="/switch_turns" method="post">
   <input type="submit" value="Next Turn">
 </form>

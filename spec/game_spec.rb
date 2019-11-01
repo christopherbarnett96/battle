@@ -33,13 +33,13 @@ describe Game do
   context '#turns' do
 
     it 'switches turn after first turn' do
-      game.attack(mittens)
+      game.switch_turns
       expect(game.current_turn).to eq mittens
     end
 
     it 'second turn changes player' do
-      game.attack(mittens)
-      game.attack(dave)
+      game.switch_turns
+      game.switch_turns
       expect(game.current_turn).to eq dave
     end
   end
