@@ -1,9 +1,10 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new('Dave', 'Mittens') }
   let(:dave) { double :player, name: 'Dave' }
-  let(:mittens) { double :player, name: 'Mittens' }
+  let(:mittens) { double :player_2, name: 'Mittens' }
+  subject(:game) { described_class.new(dave, mittens) }
+
 
   before do (:each)
     allow(mittens).to receive(:receive_damage)
@@ -33,13 +34,13 @@ describe Game do
 
     it 'switches turn after first turn' do
       game.attack(mittens)
-      expect(game.current_turn).to eq 'Mittens'
+      expect(game.current_turn).to eq mittens
     end
 
     it 'second turn changes player' do
       game.attack(mittens)
       game.attack(dave)
-      expect(game.current_turn).to eq 'Dave'
+      expect(game.current_turn).to eq dave
     end
   end
 end
